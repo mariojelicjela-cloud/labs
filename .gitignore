@@ -1,9 +1,21 @@
 .DS_Store
 .env
 content/
-.claude/
+
+# Python
 __pycache__/
 *.pyc
-.vscode/
-The-AI-Engineer-Challenge/
 
+# Editors / tools
+.vscode/
+.claude/
+
+# Virtual environments
+.venv
+uv.lock
+
+# LangGraph / APIs
+.langgraph_api/
+
+# Project-specific
+The-AI-Engineer-Challenge/
