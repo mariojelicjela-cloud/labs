@@ -1,4 +1,10 @@
-# Session #: [emoji] Session Name
+# Session 10: 📊 Agentic RAG Evaluation
+
+🎯 Learn to set up and implement effective evals for agents and RAG applications.
+
+- Build an Agentic RAG application with LangGraph
+- Learn to evaluate RAG and Agent applications quantitatively with the RAG ASsessment (RAGAS) framework
+- Use metrics-driven development to improve agentic applications, measurably, with RAGAS 
 
 🎯 Learn to set up and implement effective evals for agents and RAG applications.
 
