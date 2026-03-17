@@ -70,6 +70,25 @@ What is the key architectural difference between the `simple_agent` and `agent_w
 
 ##### Answer:
 
+The key architectural difference is that simple_agent is a linear tool-using graph, while agent_with_helpfulness adds an additional evaluation step after generating the response.
+
+Simple_agent:
+the flow is essentially: user query - model/agent - tool call if necessary - final response. 
+There is no additional quality check of the response.
+
+
+Agent_with_helpfulness. After the agent generates the response, there is another node for helpfulness evaluation. This node evaluates whether the response is useful enough. If it is, the graph ends. If not, the graph goes back to an earlier step and tries to improve the response again, which creates an evaluation loop.
+
+This helpfulness loop works like this:
+
+- agent generates response
+
+- helpfulness node evaluates the response
+
+- if the response is good enough, execution ends
+
+- if not, the graph re-enters generating/improving the response
+
 
 
 #### Question 2:
@@ -77,12 +96,19 @@ What is the role of `langgraph.json` in the LangGraph Deployments? Describe each
 
 ##### Answer:
 
+Langgraph.json is the configuration file for LangGraph deployment. It tells the LangGraph platform which graphs the project has, where they are located in the code, and which assistants to expose through the API and Studio. When you run langgraph dev, the server reads this file to discover the graphs and configure the environment.
+
 
 
 #### Activity #1:
 Create your own agent graph! Build a new graph in `app/graphs/` with a custom evaluation node (e.g., a vibe checker, a fact verifier, a summarizer — get creative!). Register it in `langgraph.json`, serve it with `uv run langgraph dev`
 
 ##### Answer:
+
+I created  a custom graph called vibe_agent with the assistant agent_vibe. 
+The graph includes a node vibe_check that checks whether the response is clear, friendly, and useful. 
+If the response does not pass the evaluation, the graph loops back to regenerate an improved answer. 
+After registering it in langgraph.json and restarting the local server, I was able to view it in LangGraph Studio.
 
 
 
