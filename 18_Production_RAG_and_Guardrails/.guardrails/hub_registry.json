@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "validators": {
+    "tryolabs/restricttotopic": {
+      "import_path": "tryolabs_grhub_restricttotopic",
+      "exports": [
+        "RestrictToTopic"
+      ],
+      "installed_at": "2026-03-27T20:39:27.760306+00:00",
+      "package_name": "tryolabs-grhub-restricttotopic"
+    },
+    "guardrails/competitor_check": {
+      "import_path": "guardrails_grhub_competitor_check",
+      "exports": [
+        "CompetitorCheck"
+      ],
+      "installed_at": "2026-03-27T20:46:49.640302+00:00",
+      "package_name": "guardrails-grhub-competitor-check"
+    },
+    "arize-ai/llm_rag_evaluator": {
+      "import_path": "arize_ai_grhub_llm_rag_evaluator",
+      "exports": [
+        "LlmRagEvaluator",
+        "ArizeRagEvalPromptBase",
+        "ContextRelevancyPrompt",
+        "HallucinationPrompt",
+        "QACorrectnessPrompt"
+      ],
+      "installed_at": "2026-03-27T20:47:12.269875+00:00",
+      "package_name": "arize-ai-grhub-llm-rag-evaluator"
+    },
+    "guardrails/profanity_free": {
+      "import_path": "guardrails_grhub_profanity_free",
+      "exports": [
+        "ProfanityFree"
+      ],
+      "installed_at": "2026-03-27T20:48:06.160264+00:00",
+      "package_name": "guardrails-grhub-profanity-free"
+    }
+  }
+}
